@@ -1,7 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
+import axios from "axios"
 
 export default function CardStat() {
+  const [start, setStart] = useState("");
+  const [limit, setLimit] = useState("");
+  const [data, setData] = useState("");
+
+  const handleChangeStart = (e) =>{
+      setStart(e.target.value);
+  }
+  const handleChangeLimit = (e) =>{
+    setLimit(e.target.value);
+}
+
+const handleSubmit = async () => {
+  try{
+    const statResponse = await axios.get(`https://card-verification.herokuapp.com/card-scheme/stats?start=${start}&limit=${limit}`);
+    const{data} = statResponse;
+    setData(data);
+  }catch(e){
+    alert("Request out of range, try using a lesser starting point")
+  }
+}
+
+const{size, payload} = data;
+console.log(payload);
+
+
+
+
   return (
     <Component>
       <h2>ANALYTICS</h2>
@@ -11,21 +39,24 @@ export default function CardStat() {
 
       <form>
         <label for="start">Start:</label>
-        <input type="text" placeholder="Enter start number" id="start" />
+        <input onChange = {handleChangeStart} type="text" placeholder="Enter start number" id="start" />
         <label for="limit">limit:</label>
-        <input type="text" placeholder="Enter limit number" id="limit" />
-        <a className="btn">Search</a>
+        <input onChange = {handleChangeLimit} type="text" placeholder="Enter limit number" id="limit" />
+        <a onClick= {handleSubmit} className="btn">Search</a>
       </form>
       <div className="stat__cover">
         <div className="top__cover">
           <div className="right__top">
             <h3>Card Numbers:</h3>
-            <span className="span">565376738</span>
+              {/* {items.map((values)=> {
+              return  <span className="span">{values} occurred {payload[values]} times</span>
+              })} */}
+
           </div>
 
           <div className="left__top">
             <h3>Size:</h3>
-            <span className="span">27734894 79384883737</span>
+            <span className="span">{size}</span>
           </div>
         </div>
       </div>
