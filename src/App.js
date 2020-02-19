@@ -11,7 +11,7 @@ export default function App() {
 
   const handleChange = (e)=>{
 
-    // console.log(e.target.value)
+    // console.log(e.target.value)'
     setCard(e.target.value);
 
   }
