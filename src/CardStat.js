@@ -132,7 +132,7 @@ const Component = styled.div`
     display: block;
   }
 
-  @media screen and (max-width:411px){
+  @media screen and (max-width:769px){
     label {
     margin: 0px;
   }
