@@ -131,4 +131,32 @@ const Component = styled.div`
   span{
     display: block;
   }
+
+  @media screen and (max-width:411px){
+    label {
+    margin: 0px;
+  }
+
+  a {
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  .stat__cover{
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px 15px;
+  }
+
+  h2{
+    font-size: 2.0rem;
+    padding-top: 30px;
+  }
+
+  }
+
 `;
