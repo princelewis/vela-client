@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styled from "styled-components"
 import axios from 'axios'
 import CardStat from "./CardStat"
+import "./App.css";
 
 
 
@@ -96,6 +97,7 @@ const Component = styled.div`
     position: relative;
     padding:3px;
   }
+
   .bordered{
     border: 1px solid black;
   }
@@ -157,5 +159,50 @@ const Component = styled.div`
     font-size:1.4em;
 
   }
+
+  @media screen and (max-width:769px){
+    .cover{
+    margin: 20px auto;
+    width: 100%;
+  }
+  h2{
+    font-size: 1.2em;
+  }
+  .card__cover{
+    padding: 5px;
+    width:90%;
+    right: 19px;
+  }
+  .span{
+    font-size:1em;
+  }
+
+  .form__cover{
+    padding: 60px 20px 30px 20px;
+    margin-top: 135px;
+    box-shadow: 5px 8px 22px -9px #251d3d;
+  }
+
+  .buttonx{
+    /* margin-top: 15px; */
+    font-size: 1.2em;
+    margin: 0px 49px 0px 79px;
+    background-color: #251d3d;
+    border-radius: 8px;
+    border: none;
+    padding:10px 2px;
+    width: 45%;
+    color:white;
+
+  }
+
+  .card__field{
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid grey;
+    margin-bottom:10px;
+  }
+
+}
 
 `
