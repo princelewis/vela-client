@@ -174,11 +174,11 @@ const Component = styled.div`
     right: 19px;
   }
   .span{
-    font-size:1em;
+    font-size:0.9em;
   }
 
   .form__cover{
-    padding: 60px 20px 30px 20px;
+    padding: 75px 20px 30px 20px;
     margin-top: 135px;
     box-shadow: 5px 8px 22px -9px #251d3d;
   }
